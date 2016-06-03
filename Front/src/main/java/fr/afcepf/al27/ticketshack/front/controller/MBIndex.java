@@ -12,7 +12,7 @@ public class MBIndex {
 	@Autowired
 	private IFacade facade;
 	
-	private Evenement evenement = new Evenement("hello"); // provisoir pour eviter le nullPointerExcep
+	private Evenement evenement; // provisoir pour eviter le nullPointerExcep
 	
 	public String fonction() {
 		evenement = facade.getServiceEvenement().getEvenementById(1);
