@@ -1,0 +1,92 @@
+@CHARSET "UTF-8";
+
+html {
+	margin:0;
+	padding:0;
+	font-family: monospace;
+}
+
+body {
+	margin: auto;
+	padding: 0;
+	
+	width: 80%;
+}
+
+/* === HEADER === */
+header {
+	background-color: #004a3e;
+	height: 100px;
+	
+	text-align: center;
+	color: white;
+}
+
+header .menuConnexion {
+	height: 40%;
+}
+header .inputConnexion {
+	padding-top: 9px;
+
+	background-color: #195B50;
+	height: 100%;
+}
+header .infoPanier {
+	padding-top: 5px;
+	
+	background-color: #3D746B;
+	height: 100%;
+}
+
+header .menuPrincipal {
+	padding: 20px;
+	
+	height: 60%;
+	font-size: 20px;
+}
+
+/* === TRUNK === */
+.trunk {
+	height: auto;
+}
+.trunk section {
+	margin: 40px 0px;
+	padding: 20px 50px;
+	background-color: #859485;
+	height: 250px;
+	
+	position: relative;
+}
+.trunk section:first-of-type {
+	margin-top: 0px;
+} 
+.trunk section:last-of-type {
+	margin-bottom: 0px;
+}
+.trunk section .iconeCategorie {
+	max-width: 50px;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trunk section .titreCategorie {
+	padding: 10px;
+
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+}
+br {
+	c
+}
+.trunk section .contenu {
+	border: 1px solid black;
+	height: 175px;
+}
+/* === FOOTER === */
+footer {
+	background-color:  #004a3e;
+	
+	height: 100px;
+}

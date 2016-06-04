@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="language" content="fr" />
+	<title>Accueil</title>
+
+	<link rel="stylesheet" href="../style/css.css" />
+
+</h:head>
+<h:body>
+	<!-- ===== HEADER ===== -->
+
+	<header>
+		<div class="menuConnexion ui-grid-row">
+			<div class="inputConnexion ui-grid-col-10">
+				<div class="ui-grid-col-3">&#160;</div>
+				<div class="ui-grid-col-1">
+					<p:outputLabel value="Mail:" />
+				</div>
+				<div class="ui-grid-col-2">
+					<p:inputText size="15" />
+				</div>
+				<div class="ui-grid-col-2">
+					<h:outputLabel>Mot de Passe: </h:outputLabel>
+				</div>
+				<div class="ui-grid-col-2">
+					<h:inputText size="15" />
+				</div>
+			</div>
+
+			<div class="infoPanier ui-grid-col-2">
+				<div class="ui-grid">
+					<div class="ui-grid-col-4">
+						<h:outputLabel value="2" />
+					</div>
+					<div class="ui-grid-col-8">
+						<h:outputLabel value="Articles dans votre Panier" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="menuPrincipal ui-grid-row">
+			<div class="ui-grid-col-2">Accueil</div>
+			<div class="ui-grid-col-10">
+				<div class="ui-grid-col-2">Cinema</div>
+				<div class="ui-grid-col-2">Concert</div>
+				<div class="ui-grid-col-2">Musee</div>
+				<div class="ui-grid-col-2">Parc</div>
+				<div class="ui-grid-col-2">Spectacle</div>
+				<div class="ui-grid-col-2">Sport</div>
+			</div>
+		</nav>
+	</header>
+
+
+	<!-- ==== TRUNK ==== -->
+	<div class="trunk">
+		<!-- ===== CAROUSEL ===== -->
+		<p:carousel numVisible="1" effect="easeInStrong"
+			style="margin-bottom:0;" responsive="true" autoPlayInterval="10000">
+			<p:tab title="Philarmonie de Paris">
+				<h:graphicImage value="../images/concert-philarmonie-paris.jpg" />
+			</p:tab>
+			<p:tab title="Muse à la Tour Eiffel">
+				<p:graphicImage value="../images/concert-muse-tour-eiffel.jpg" />
+			</p:tab>
+			<p:tab title="Christope en Concert">
+				<p:graphicImage value="../images/concert-christophe.jpg" />
+			</p:tab>
+		</p:carousel>
+		<!-- ===== CATEGORIES ===== -->
+		<section class="categorie cinema">
+			<p:graphicImage class="iconeCategorie"
+				value="../images/icone-cinema.jpg" />
+			<div class="titreCategorie">Cinéma</div>
+			<div class="separateur">
+				<hr />
+			</div>
+			<div class="contenu">
+				<div class="carouselCategorie"></div>
+			</div>
+		</section>
+		<section class="spectacle"></section>
+		<section class="concert"></section>
+	</div>
+
+	<!-- ===== FOOTER ===== -->
+	<footer></footer>
+
+</h:body>
+</html>
