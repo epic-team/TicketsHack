@@ -2,10 +2,28 @@ package fr.afcepf.al27.ticketshack.impldao.impldao;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
 import fr.afcepf.al27.ticketshack.apidao.apidao.IDaoCivilite;
 import fr.afcepf.al27.ticketshack.entity.entity.Civilite;
 
+
+@Repository
+@Transactional
 public class ImplDaoCivilite implements IDaoCivilite {
+
+
+	EntityManager em;
+
+	@PersistenceContext(unitName="entityManagerFactory")
+	public void setEm(EntityManager em) {
+		this.em = em;
+	}
 
 	@Override
 	public void insert(Civilite civilite) {
@@ -27,8 +45,9 @@ public class ImplDaoCivilite implements IDaoCivilite {
 
 	@Override
 	public List<Civilite> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String requete = "FROM Civilite";
+		TypedQuery<Civilite> query = em.createQuery(requete,Civilite.class);
+		return query.getResultList();
 	}
 
 	@Override
