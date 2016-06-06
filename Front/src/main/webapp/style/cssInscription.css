@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+.headerInscription {
+	padding-top: 30px;
+	margin-bottom: 20px;
+}
+
+.headerInscription h1 {
+	text-align: center;
+}
+
+.couleurDeFond {
+	background-color: #859485
+}
+
+.formInscription {
+	padding-left: 50px;
+}
+.themesSelection{
+	height: 400px;
+	overflow:auto;
+}
