@@ -1,25 +1,37 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>fr.afcepf.al27</groupId>
-  <artifactId>TicketsHack</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <modules>
-  	<module>Front</module>
-  	<module>ApiService</module>
-  	<module>ApiDao</module>
-  	<module>ImplService</module>
-  	<module>ImplDao</module>
-  	<module>Entity</module>
-  </modules>
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.afcepf.al27</groupId>
+	<artifactId>TicketsHack</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>Front</module>
+		<module>ApiService</module>
+		<module>ApiDao</module>
+		<module>ImplService</module>
+		<module>ImplDao</module>
+		<module>Entity</module>
+	</modules>
+	<properties>
 		<maven-compiler-plugin-version>2.0.2</maven-compiler-plugin-version>
 		<spring-version>4.2.6.RELEASE</spring-version>
 		<hibernate-version>5.1.0.Final</hibernate-version>
 		<mysql-version>5.1.39</mysql-version>
 		<jsf-version>2.2.13</jsf-version>
 		<primefaces-version>5.3</primefaces-version>
-</properties>
+		<primefaces-theme>afterdark</primefaces-theme> <!-- glass-x --> 
+		<primefaces-theme-version>1.0.10</primefaces-theme-version> <!-- 1.0.6 --> 
+		<jstl-version>1.2</jstl-version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>Prime Repo</name>
+			<url>http://repository.primefaces.org</url>
+		</repository>
+	</repositories>
 
 	<dependencyManagement>
 		<dependencies>
@@ -76,7 +88,7 @@
 				<artifactId>spring-test</artifactId>
 				<version>${spring-version}</version>
 			</dependency>
-			
+
 			<!-- http://mvnrepository.com/artifact/com.sun.faces/jsf-impl -->
 			<dependency>
 				<groupId>com.sun.faces</groupId>
@@ -95,6 +107,19 @@
 				<artifactId>primefaces</artifactId>
 				<version>${primefaces-version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>org.primefaces.themes</groupId>
+				<artifactId>${primefaces-theme}</artifactId>
+				<version>${primefaces-theme-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet.jsp.jstl</groupId>
+				<artifactId>jstl-api</artifactId>
+				<version>${jstl-version}</version>
+			</dependency>
+
 
 		</dependencies>
 	</dependencyManagement>

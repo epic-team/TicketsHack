@@ -69,4 +69,5 @@ public class Civilite implements java.io.Serializable {
 		this.utilisateurs = utilisateurs;
 	}
 
+	
 }
