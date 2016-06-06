@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="language" content="fr" />
+	<title>Inscription</title>
+
+	<link rel="stylesheet" href="../style/css.css" />
+	<link rel="stylesheet" href="../style/cssInscription.css" />
+
+</h:head>
+<h:body>
+	<!-- ===== HEADER ===== -->
+
+	<!-- ==== TRUNK ==== -->
+	<div class="trunk couleurDeFond">
+
+		<div class="headerInscription ui-grid-row">
+			<h1>Inscrivez-vous</h1>
+		</div>
+
+		<h:form>
+
+			<div class="ui-grid-row">
+				<div class=" ui-grid-col-6">
+					<h:panelGrid columns="2" cellpadding="5" class="formInscription">
+						<h:outputLabel for="mail" value="Adresse mail: *" />
+						<p:inputText value="" required="true" />
+
+						<h:outputLabel for="pwd1" value="Mot de passe: *" />
+						<p:password value="" match="pwd2" required="true" />
+
+						<h:outputLabel for="pwd2" value="Confirmation mot de passe: *" />
+						<p:password value="" required="true" />
+					</h:panelGrid>
+
+				</div>
+				<div class="ui-grid-col-6">
+
+					<h:panelGrid columns="2" cellpadding="5" class="formInscription">
+
+						<p:selectOneRadio value="">
+							<f:selectItems value="#{mbInscription.civilites}" var="c"
+								itemLabel="#{c.libelleCivilite}"
+								itemValue="#{mbInscription.utilisateur.civilite}" />
+						</p:selectOneRadio>
+						<br />
+						<h:outputLabel for="nom" value="Nom: *" />
+						<p:inputText value="" required="true" />
+						<h:outputLabel for="prenom" value="Prénom: *" />
+						<p:inputText value="" required="true" />
+						<h:outputLabel for="naissance" value="Date naissance: " />
+						<p:calendar value="#{calendarView.date5}" locale="fr"
+							navigator="true" pattern="yyyy-MMM-dd" yearRange="c-100:c" />
+						<h:outputLabel for="mobile" value="Numéro de mobile: " />
+						<p:inputMask value="" mask="99 99 99 99 99" />
+					</h:panelGrid>
+
+
+				</div>
+
+			</div>
+
+			<div class="ui-grid-row themesSelection">
+			
+				<ui:repeat var="c" value="#{mbInscription.categories}">
+				
+					<h4>#{c.libelleCategorie}</h4>
+					<p:selectManyCheckbox id="grid"
+						value="#{mbInscription.utilisateur.themes}" layout="grid" columns="3">
+						<f:selectItems value="#{mbInscription.themesParCategorie(c)}" var="t"
+							itemLabel="#{t.libelleTheme}" itemValue="#{t.idTheme}" />
+					</p:selectManyCheckbox>
+
+				</ui:repeat>
+
+
+			</div>
+
+		</h:form>
+
+	</div>
+
+
+	<!-- ===== FOOTER ===== -->
+	<footer></footer>
+
+</h:body>
+</html>
